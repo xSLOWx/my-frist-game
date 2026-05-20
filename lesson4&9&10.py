@@ -17,7 +17,6 @@ def Ranking_add():
             i.append({"name":name,"CiShu":CiShu,"num":secret})
         with open("Ranking.json","w", encoding="utf-8") as f:
             json.dump(i,f,ensure_ascii=False,indent=4)
-    
     except FileNotFoundError:
         print("文件不存在")
         New_Ranking()
@@ -27,6 +26,7 @@ def Ranking_add():
         with open("Ranking.json","w", encoding="utf-8") as f:
             json.dump(i,f,ensure_ascii=False,indent=4)
 
+#主程序
 if __name__ == "__main__":
     print("—————————————————————— 排行榜 ——————————————————————")
     print("————————————————————————————————————————————————————")
@@ -60,6 +60,6 @@ if __name__ == "__main__":
             Ranking_add()
             break
         elif guess > secret:
-            print(f"这个数字比神秘数字大")
+            print(f"这个数字比神秘数字大,再试试吧!")
         else:
-            print(f"这个数字比神秘数字小")
+            print(f"这个数字比神秘数字小,再试试吧!")
